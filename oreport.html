@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="om">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabaasa Garee Teekinikaa</title>
+    <style>
+        body {
+            background-color: rgba(0, 29, 5, 0.1);
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+ <a href="https://etachali2-prog.github.io/To-home/">Gara Manaatti</a> 
+ 
+ <label>Afaan:</label>
+<select onchange="location = this.value;">
+  <option value="" disabled selected>Select Language</option>
+  <option value="oreport.html">Afaan Oromoo</option>
+  <option value="ereport.html">English</option>
+  <option value="Areport.html">Amharic</option>
+</select>
+
+
+
+
+
+ <marquee> 
+    <h1 style="color:Green;">Kutaa: Unka Gabaasa Garee Teekinikaa!</h1> 
+ </marquee> 
+   
+  <form id="myForm">
+     
+    <label>Guyyaa:</label> <input type="date" name="Date" required>
+    <label>Kutaa/Koreetti:</label> <input type="text" name="Department"><br><br>
+    
+    <label>Kan Gaafate:</label> <input type="text" name="RequestedBy">
+    <label>Sa'aatii Gaaffii:</label> <input type="time" name="RequestedTime"><br><br>
+    
+    <label>Maqaa Maashinii:</label> <input type="text" name="MachineName">
+    <label>Bakka/Iddoo:</label> <input type="text" name="Location"><br><br>
+    
+    <label>Itoota Suphaa Barbaachisan:</label>
+    <select name="MaintenanceType">
+      <option value="Preventive Maintenance">Suphaa Ittisaa (Preventive)</option>
+      <option value="Corrective Maintenance">Suphaa Sirreessaa (Corrective)</option>
+      <option value="Emergency Breakdown">Caccaba Hangafoomaa (Emergency)</option>
+      <option value="Inspection">Sakatta'iinsa (Inspection)</option>
+      <option value="Installation">Dhaaba/Miseensa (Installation)</option>
+      <option value="Modification">Fooyya'iinsa (Modification)</option>
+    </select><br><br>
+    
+    <label>Ibsa Rakkoichaa:</label><br>
+    <textarea name="ProblemDescription"></textarea><br><br>
+    
+    <label>Saddarkaa Ariifachiisummaa:</label>
+    <select name="PriorityLevel">
+      <option value="Low">Gadanaa (Low)</option>
+      <option value="Medium">Giddu-galeessa (Medium)</option>
+      <option value="High">Olaanaa (High)</option>
+      <option value="Urgent">Ariifachiisaa (Urgent)</option>
+    </select><br><br>
+    
+    <label>Gochawwan Suphaa Gaafataman:</label>
+    <select name="MaintenanceActivity">
+      <option value="Electrical troubleshooting">Barbaacha fi Sirreessaa Elektriikaa</option>
+      <option value="Mechanical repair">Suphaa Meekaaniikaa</option>
+      <option value="Workshop">Hojii Waajira Suphaa (Workshop)</option>
+    </select><br><br>
+    
+    <hr>
+    <h3>Tarkaanfii Kutaa Suphaa:</h3>
+    <label>Maqaa Teekinishiyana Ramadame:</label> <input type="text" name="AssignedTechnician">
+    <label>Guyyaa:</label> <input type="date" name="Date">
+    <label>Sa'aatii:</label> <input type="time" name="Time"><br><br>
+    <label>Tarkaanfii Filatame/Fudhatame:</label><br>
+    <textarea name="ActionTaken"></textarea><br><br>
+
+    <hr>
+    <h3>Ibsa Xumura Hojii:</h3>
+    <label>Sa'aatii Jalqaba Hojii:</label> <input type="time" name="WorkStartTime">
+    <label>Sa'aatii Xumura Hojii:</label> <input type="time" name="WorkCompletionTime">
+    <label>Turtii Maashiniin Dhaabbate:</label> <input type="text" name="DowntimeDuration"><br><br>
+
+    <hr>
+    <h3>Meeshaalee Jijjiiraa Barbaachisan (Spare Parts):</h3>
+    <label>Maqaa Meeshaa:</label> <input type="text" name="SpareItemName">
+    <label>Lak. Meeshaa/Ibsa (Part No):</label> <input type="text" name="SparePartNo">
+    <label>Safeeffata (Unit):</label> <input type="text" name="SpareUnit">
+    <label>Baay'ina:</label> <input type="number" name="SpareQuantity">
+    <br><br>
+    <label>Yaada dabalataa (Remark):</label><br>
+    <textarea name="SpareRemark"></textarea><br><br>
+
+    <hr>
+    <label>Haala Suphaa:</label>
+    <select name="MaintenanceStatus">
+      <option value="In progress">Hojii rarra'aa jira (In progress)</option>
+      <option value="Completed">Xumurameera (Completed)</option>
+      <option value="Pending">Eegamaa jira (Pending)</option>
+    </select><br><br>
+    
+    <label>Yoo eegamaa jire, maaliif?</label><br>
+    <textarea name="PendingReason"></textarea><br><br>
+    
+    <hr>
+    <h3>Mirkaneessa:</h3>
+    <label>Maqaa To'ataa/Garee Dursaa:</label>
+    <input type="text" name="SupervisorName"><br><br>
+    <label>Maqaa Dursaa Garee Teekinikaa:</label>
+    <input type="text" name="TechnicTeamLeaderName"><br><br>
+
+    <button type="submit">Ergi</button>
+  </form>
+  
+<script>
+  const form = document.getElementById('myForm');
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzUsSM2UG_hlM1uGYfMXBeI3usddMsyyzyZMoRe4DbU0W5QhCDKTED7Pb1TbXTJy1gVLA/exec'; 
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Ergamaa jira...';
+    submitBtn.disabled = true;
+    
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+         alert('Galatoomaa! Gabaasni keessan milkiidhaan ergameera.');
+         form.reset(); 
+         submitBtn.textContent = 'Ergi';
+         submitBtn.disabled = false;
+      })
+      .catch(error => {
+         console.error('Error!', error.message);
+         alert('Dogoggorri uumameera. Maaloo irra deebi'aa yaala.');
+         submitBtn.textContent = 'Ergi';
+         submitBtn.disabled = false;
+      });
+  });
+</script>
+</body>
+</html>
